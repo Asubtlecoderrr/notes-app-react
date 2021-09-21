@@ -19,7 +19,7 @@ const Note = ({ match, history }) => {
 
     let getNote = async () => {
         if (noteId === 0) return
-        let response = await fetch(`http://localhost:5000/note/${noteId}`)
+        let response = await fetch(`https://notes-application-mern.herokuapp.com/note/${noteId}`)
         let data = await response.json()
         setNote(data)
     }
@@ -27,7 +27,7 @@ const Note = ({ match, history }) => {
     const createNote = async () => {
 
 
-        await fetch(`http://localhost:5000/note/0`, {
+        await fetch(`https://notes-application-mern.herokuapp.com/note/0`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ const Note = ({ match, history }) => {
 
 
     const updateNote = async () => {
-        await fetch(`http://localhost:5000/note/${noteId}/`, {
+        await fetch(`https://notes-application-mern.herokuapp.com/note/${noteId}/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ const Note = ({ match, history }) => {
     }
 
     const deleteNote = async () => {
-        await fetch(`http://localhost:5000/note/${noteId}/`, {
+        await fetch(`https://notes-application-mern.herokuapp.com/note/${noteId}/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
